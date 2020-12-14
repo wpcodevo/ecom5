@@ -1,0 +1,130 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 2,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    },
+    {
+      "id": 3,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 4,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 5,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 6,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    },
+    {
+      "id": 7,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 8,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 9,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    },
+    {
+      "id": 10,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 11,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 12,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 13,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    },
+    {
+      "id": 14,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 15,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "TRENDING PRODUCTS"
+    },
+    {
+      "id": 16,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    },
+    {
+      "id": 17,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "SPECIAL PRODUCTS"
+    },
+    {
+      "id": 18,
+      "title": "",
+      "image": "./images/.jpeg",
+      "price": 760,
+      "category": "FEATURED PRODUCTS"
+    }
+  ]
+}
