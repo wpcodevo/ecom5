@@ -1,6 +1,7 @@
 :root {
   --white: #fff;
   --black: #222;
+  --grey: #3a3b3c;
 }
 
 *,
@@ -43,13 +44,252 @@ li {
   list-style: none;
 }
 
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--black);
+  height: 6.5rem;
+  line-height: 6.5rem;
+}
+
 nav .wrapper {
-  background-color: red;
   max-width: 125rem;
   padding: 0 3rem;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .wrapper .logo a {
-  color: var(--black);
+  color: var(--white);
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+
+.wrapper .nav-list {
+  display: inline-flex;
+}
+
+.nav-list a {
+  color: var(--white);
+  font-size: 1.8rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 300ms ease;
+}
+
+.nav-list a:hover {
+  background-color: var(--grey);
+}
+
+.nav-list .drop-menu {
+  background-color: #222;
+  width: 18rem;
+  top: 8.5rem;
+  line-height: 4.5rem;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.drop-menu li a {
+  display: block;
+  width: 100%;
+  padding: 0 0 0 1.5rem;
+  border-radius: 0;
+}
+
+.nav-list li:hover .drop-menu,
+.nav-list li:hover .mega-box {
+  opacity: 1;
+  visibility: visible;
+  top: 6.5rem;
+}
+
+.mega-box {
+  position: absolute;
+  top: 8.5rem;
+  left: 0;
+  background-color: var(--black);
+  width: 100%;
+  padding: 0 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.mega-box .content {
+  background-color: var(--black);
+  padding: 2.5rem 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mega-box .content .row {
+  width: calc(25% - 3rem);
+  line-height: 4.5rem;
+}
+
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content .row header {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.content .row .mega-links {
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+  margin-left: -4rem;
+}
+
+.content .row li {
+  padding: 0 2rem;
+}
+
+.content .row li a {
+  padding: 0 2rem;
+  display: block;
+  font-size: 1.7rem;
+  color: #f2f2f2;
+}
+
+.nav-list .mobile-item {
+  display: none;
+}
+
+.nav-list input {
+  display: none;
+}
+
+.wrapper .btn {
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width: 968px) {
+  .wrapper .nav-list {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    max-width: 35rem;
+    background-color: var(--black);
+    display: block;
+    overflow-y: auto;
+    line-height: 5rem;
+    padding: 5rem 1rem;
+    box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    transition: all 300ms linear;
+  }
+
+  .wrapper .nav-list.show {
+    left: 0;
+  }
+
+  .nav-list li {
+    margin: 1.5rem 1rem;
+  }
+
+  .nav-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+
+  .nav-list .drop-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    top: 6.5rem;
+    padding-left: 2rem;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  #showdrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box {
+    max-height: 100%;
+  }
+
+  .nav-list .drop-menu li {
+    margin: 0;
+  }
+
+  .nav-list .desktop-item {
+    display: none;
+  }
+
+  .nav-list .mobile-item {
+    display: block;
+    font-size: 2rem;
+    padding-left: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  .nav-list .mobile-item:hover {
+    background-color: var(--grey);
+  }
+
+  .mega-box {
+    position: static;
+    top: 6.5rem;
+    padding: 0 2rem;
+    opacity: 1;
+    visibility: visible;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 300ms ease;
+  }
+
+  .mega-box .content {
+    background-color: var(--black);
+    flex-direction: column;
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .mega-box .content .row {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    margin-bottom: 1.5rem;
+  }
+
+  .content .row:nth-child(1),
+  .content .row:nth-child(2) {
+    border-top: 0;
+  }
+
+  .content .row .mega-links {
+    border-left: 0;
+    padding-left: 2rem;
+  }
+
+  .row .mega-links li {
+    margin: 0;
+  }
+
+  .wrapper .btn {
+    display: block;
+  }
+
+  .nav-list .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+  }
 }
