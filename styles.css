@@ -1,7 +1,9 @@
 :root {
+  --primary: #ff4545;
   --white: #fff;
   --black: #222;
-  --grey: #3a3b3c;
+  --grey1: #3a3b3c;
+  --grey2: #828282;
 }
 
 *,
@@ -44,11 +46,16 @@ li {
   list-style: none;
 }
 
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
 nav {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background-color: var(--black);
+  background-color: var(--white);
   height: 6.5rem;
   line-height: 6.5rem;
 }
@@ -64,46 +71,63 @@ nav .wrapper {
 }
 
 .wrapper .logo a {
-  color: var(--white);
+  color: var(--primary);
   font-size: 2.7rem;
   font-weight: 600;
+  padding: 0.5rem;
+  border: 3px solid var(--black);
 }
 
 .wrapper .nav-list {
   display: inline-flex;
 }
 
+.nav-list li i {
+  color: var(--grey2);
+}
+
 .nav-list a {
-  color: var(--white);
-  font-size: 1.8rem;
+  color: var(--black);
+  font-size: 1.5rem;
   padding: 0.9rem 1.5rem;
   border-radius: 0.5rem;
   transition: all 300ms ease;
 }
 
-.nav-list a:hover {
-  background-color: var(--grey);
+.nav-list li a:hover {
+  color: var(--primary);
 }
 
-.nav-list .drop-menu {
-  background-color: #222;
-  width: 18rem;
+.nav-list .drop-menu1,
+.nav-list .drop-menu2 {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  width: 20rem;
   top: 8.5rem;
   line-height: 4.5rem;
   position: absolute;
+  background-color: var(--white);
   opacity: 0;
   visibility: hidden;
   transition: all 300ms ease;
 }
 
-.drop-menu li a {
+.nav-list .drop-menu1 li a,
+.nav-list .drop-menu2 li a {
   display: block;
+  font-size: 1.5rem;
   width: 100%;
   padding: 0 0 0 1.5rem;
   border-radius: 0;
+  color: var(--grey2);
 }
 
-.nav-list li:hover .drop-menu,
+.nav-list .drop-menu1 li a:hover,
+.nav-list .drop-menu2 li a:hover {
+  color: var(--primary);
+}
+
+.nav-list li:hover .drop-menu1,
+.nav-list li:hover .drop-menu2,
 .nav-list li:hover .mega-box {
   opacity: 1;
   visibility: visible;
@@ -111,19 +135,19 @@ nav .wrapper {
 }
 
 .mega-box {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 8.5rem;
   left: 0;
-  background-color: var(--black);
   width: 100%;
   padding: 0 3rem;
+  background-color: var(--white);
   opacity: 0;
   visibility: hidden;
   transition: all 300ms ease;
 }
 
 .mega-box .content {
-  background-color: var(--black);
   padding: 2.5rem 2rem;
   display: flex;
   width: 100%;
@@ -142,9 +166,9 @@ nav .wrapper {
 }
 
 .content .row header {
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--grey1);
 }
 
 .content .row .mega-links {
@@ -159,8 +183,12 @@ nav .wrapper {
 .content .row li a {
   padding: 0 2rem;
   display: block;
-  font-size: 1.7rem;
-  color: #f2f2f2;
+  font-size: 1.5rem;
+  color: var(--grey2);
+}
+
+.content .row li a:hover {
+  color: var(--primary);
 }
 
 .nav-list .mobile-item {
@@ -178,6 +206,25 @@ nav .wrapper {
   display: none;
 }
 
+.nav-list .icons span {
+  display: inline-block;
+  margin: 0.5rem 1rem 0 0;
+  position: relative;
+}
+
+.nav-list .icons .count {
+  justify-content: center;
+  position: absolute;
+  top: 0rem;
+  right: -0.8rem;
+  background-color: var(--primary);
+  height: 2rem;
+  padding: 0.5rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 968px) {
   .wrapper .nav-list {
     position: fixed;
@@ -186,11 +233,10 @@ nav .wrapper {
     height: 100%;
     width: 100%;
     max-width: 35rem;
-    background-color: var(--black);
+    background-color: var(--white);
     display: block;
     overflow-y: auto;
     line-height: 5rem;
-    padding: 5rem 1rem;
     box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
     transition: all 300ms linear;
   }
@@ -205,11 +251,13 @@ nav .wrapper {
 
   .nav-list a {
     display: block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 0 2rem;
+    color: var(--black);
   }
 
-  .nav-list .drop-menu {
+  .nav-list .drop-menu1,
+  .nav-list .drop-menu2 {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -220,13 +268,21 @@ nav .wrapper {
     overflow: hidden;
   }
 
-  #showdrop:checked ~ .drop-menu,
+  #showdrop1:checked ~ .drop-menu1,
+  #showdrop2:checked ~ .drop-menu2,
   #showMega:checked ~ .mega-box {
     max-height: 100%;
   }
 
-  .nav-list .drop-menu li {
+  .nav-list .drop-menu1 li,
+  .nav-list .drop-menu2 li {
     margin: 0;
+  }
+
+  .nav-list .drop-menu1 li a,
+  .nav-list .drop-menu2 li a {
+    color: var(--grey2);
+    font-size: 1.5rem;
   }
 
   .nav-list .desktop-item {
@@ -235,15 +291,15 @@ nav .wrapper {
 
   .nav-list .mobile-item {
     display: block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-left: 2rem;
-    color: var(--white);
+    color: var(--black);
     cursor: pointer;
     border-radius: 0.5rem;
   }
 
   .nav-list .mobile-item:hover {
-    background-color: var(--grey);
+    color: var(--primary);
   }
 
   .mega-box {
@@ -258,7 +314,6 @@ nav .wrapper {
   }
 
   .mega-box .content {
-    background-color: var(--black);
     flex-direction: column;
     padding: 2rem 2rem 0 2rem;
   }
@@ -285,11 +340,128 @@ nav .wrapper {
 
   .wrapper .btn {
     display: block;
+    color: var(--black);
+  }
+
+  .nav-list .top {
+    position: relative;
+    display: block;
+    background-color: var(--primary);
+    width: 100%;
+    height: 8rem;
   }
 
   .nav-list .close-btn {
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: 2.5rem;
+    color: var(--white);
+  }
+
+  .nav-list .icons {
+    padding-left: 2rem;
+  }
+}
+
+/* Hero */
+.hero {
+  height: calc(100vh - 6.5rem);
+  background-color: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .right {
+  position: absolute;
+  right: -7%;
+  bottom: -1%;
+}
+
+.hero .right img {
+  width: 100%;
+  height: 60rem;
+}
+
+.hero .left {
+  color: var(--white);
+  position: absolute;
+  left: 7%;
+  top: 40%;
+}
+
+.hero .left span {
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .left h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.hero .left small {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .left a {
+  display: inline-block;
+  color: var(--black);
+  transition: all 300ms ease-out;
+}
+
+.hero .left a:hover {
+  color: var(--white);
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero .right img {
+    height: 50rem;
+  }
+
+  .hero .left span {
+    font-size: 1.7rem;
+  }
+
+  .hero .left h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .hero .left {
+    top: 30%;
+  }
+
+  .hero .right img {
+    height: 35rem;
+  }
+
+  .hero .right {
+    right: -10%;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .hero .left {
+    top: 25%;
+  }
+
+  .hero .right img {
+    height: 30rem;
+  }
+
+  .hero .right {
+    right: -18%;
+  }
+
+  .hero .left span {
+    font-size: 1.6rem;
+  }
+
+  .hero .left h1 {
+    font-size: 3rem;
   }
 }
