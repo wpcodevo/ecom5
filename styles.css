@@ -729,6 +729,131 @@ nav .wrapper {
   }
 }
 
+/* ADVERTS */
+.advert {
+}
+
+.advert .advert-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.advert-layout .item {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.advert-layout img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.advert-layout .content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.advert-layout .left {
+  right: 10%;
+}
+
+.advert-layout .right {
+  left: 10%;
+}
+
+.advert-layout .content span {
+  display: block;
+  margin-bottom: 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.advert-layout .content h3 {
+  font-size: 3rem;
+  font-weight: inherit;
+  margin-bottom: 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.advert-layout .content a {
+  transition: all 300ms ease-in-out;
+}
+
+.advert-layout .content a:hover {
+  color: var(--primary);
+}
+
+.advert-layout .item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.advert-layout .item:hover::after {
+  background-color: rgba(223, 74, 74, 0.4);
+}
+
+.advert-layout .item:hover .content {
+  color: var(--white);
+}
+
+.advert-layout .item:hover .content a {
+  color: var(--white);
+}
+
+.advert-layout .item:hover img {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 996px) {
+  .advert-layout .left {
+    right: 5%;
+  }
+
+  .advert-layout .right {
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .advert .advert-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .advert-layout .content span {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .advert-layout .content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .advert-layout .content a {
+    transition: all 300ms ease-in-out;
+  }
+}
+
+/* BRANDS */
+.brands li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* FOOTER */
 
 .footer {
